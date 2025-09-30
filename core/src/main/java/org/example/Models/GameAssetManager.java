@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import org.example.Models.Enums.Suit;
 
 import java.util.HashMap;
 
@@ -12,6 +13,7 @@ public class GameAssetManager {
     public static HashMap<String, Texture> textureMap = new HashMap<>(); // texture map to avoid re-instantiation
     public static HashMap<String, Music> playlistMap = new HashMap<>();
     public static Skin skin = new Skin(Gdx.files.internal("skin/pixthulhu-ui.json"));
+    public static Texture cardBack = new Texture(Gdx.files.internal("Pixel Art Card Deck/Back Cards/Red.png"));
 
     // gets from texture map or loads texture
     public static Texture getOrLoadTexture(String fileName) {
@@ -20,6 +22,5 @@ public class GameAssetManager {
         textureMap.put(fileName, texture);
         return texture;
     }
-
 
 }

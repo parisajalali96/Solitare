@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameState {
-    List<TableauPile> tableaus;
-    List<FoundationPile> foundations;
-    DeckPile deck;
-    WastePile waste;
+    private List<TableauPile> tableaus;
+    private List<FoundationPile> foundations;
+    private DeckPile deck;
+    private WastePile waste;
 
     void init(){
         //initialize the piles
@@ -41,6 +41,7 @@ public class GameState {
                     card.setFaceUp(true); //last card faces up
                 }
                 tableaus.get(i).addCard(card);
+                card.setCurrentPile(tableaus.get(i));
             }
         }
 
@@ -67,6 +68,19 @@ public class GameState {
             if (f.size() < 13) return false;
         }
         return true;
+    }
+
+    public List<TableauPile> getTableaus() {
+        return tableaus;
+    }
+    public List<FoundationPile> getFoundations() {
+        return foundations;
+    }
+    public DeckPile getDeck() {
+        return deck;
+    }
+    public WastePile getWaste() {
+        return waste;
     }
 
 }

@@ -3,7 +3,7 @@ package org.example.Models;
 import java.util.List;
 import java.util.Stack;
 
-abstract class Pile {
+public abstract class Pile {
     protected Stack<Card> cards;
 
     public Pile() {
